@@ -1,4 +1,4 @@
-## P6.  Titanic Data Visuvalization by Gangadhara Naga Sai
+## P6.  Titanic Data Visualization by Gangadhara Naga Sai
 
 ### Summary
 1.The first plot ,shows us a decreasing trend of survival rates from children to senior individuals.
@@ -21,7 +21,7 @@ data visuvalized:
 3. Survival Rate vs Age_groups grouped by Pclass
 
 
-### Visuvalizations before feedback:
+### Visualizations before feedback:
 The html made before feedback can be found in: p6_D3_initial.html
 
 ### Feedback from inerviews:
@@ -59,7 +59,7 @@ Is there something you don’t understand in the graphic?
 
 
 
-### Visuvalizations after Feedback:
+### Visualizations after Feedback:
 Corrections Made:
 
 - Headings ,legends and labels for axes are added.
