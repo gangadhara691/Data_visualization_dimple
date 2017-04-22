@@ -2,7 +2,9 @@
 
 ### Summary
 1.The first plot ,shows us a decreasing trend of survival rates from children to senior individuals.
+
 2.The second plot,shows us the higher survival rates for individuals accompanied by families.
+
 3.The third plot,reflects us "children and women first" ,as they are given preference over men in general.
 
 ### Design
@@ -25,10 +27,10 @@ The html made before feedback can be found in: p6_D3_initial.html
 ### Feedback from inerviews:
 
 
-#### 1. 
+#### 1st Audience. 
 What do you notice in the visualization?
 > - Rate of survival is given for different age groups
-- Proportion of people survied based on group_age, with respect to different classes is provided.
+>- Proportion of people survied based on group_age, with respect to different classes is provided.
 
 What questions do you have about the data?
 >- For plot 2, the data mentioned on yaxis is not clear,Is it the proportion of people or number of people survived?
@@ -45,11 +47,11 @@ What do you think is the main takeaway from this visualization?
 Is there something you don’t understand in the graphic?
 > 2nd graph is not self explanatory ,provide necessary details about the graphs.
 
-#### 2.
+#### 2nd Audience.
 
 > Understandable but ,Did not have proper headings and 2nd plot is not clear.Description about the data set is essential for understanding the plots.1st plot is easily understandable, and the animation was looking good.
 
-####  3.
+####  3rd Audience.
 
 > Explain about the data.
 > Is the yaxis number of people survived or its the percentage of people survived?
@@ -74,7 +76,7 @@ The html made after corrections: p3_D3_final.html
 
 
 - [Data Visualization course](https://www.udacity.com/course/viewer#!/c-ud507-nd)
-- [Investigate a dataset exploration from P2](https://github.com/gangadhara691/Data_visualization_dimple.git)
+- [Investigate a dataset exploration from P2](https://github.com/gangadhara691/P2_Investigate_Data)
 - [Barplot](http://stackoverflow.com/questions/25478673/add-colors-to-dimple-js-bar-chart-based-on-value-and-add-goal-line)
 - [imported barplot library](http://dimplejs.org/examples_viewer.html?id=bars_vertical_grouped_stacked)
 - [Kaggle: Predict survival on the Titanic using Excel, Python, R & Random Forests](https://www.kaggle.com/c/titanic)
