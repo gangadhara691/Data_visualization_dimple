@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Titanic Data Analysis By Gangadhara Naga Sai</title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
+    <script src="PMSIbar/lib/d3.v4.3.0.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+
+  </head>
+
+<body>
+    <h2>
+    
+    <span>Titanic Data Analysis By Gangadhara Naga Sai</span>
+   </h2>
+
+   <div align="center">
+<p>
+
+   In 1912, the ship RMS Titanic struck an iceberg on its maiden voyage and sank, resulting in the deaths of most of its    passengers and crew. In this project, we will explore the RMS Titanic passenger manifest to determine whether someone survived or did not survive.Demographics and passenger information from 891 of the 2224 passengers and crew on board. the Titanic Dataset is obtained from kaggle (https://www.kaggle.com/c/titanic/data).
+</p>
+</div >
+    <div align="center">
+<div id="fig1">
+</div>
+    <p>From the above plot, as the age of the passenger increases the survival rate goes down
+</p>
+</div>
+
+<div align="center">
+<div id="fig2"></div>
+     <p>From the Bar plot,The children with no parents had less survival rate than children with  one or more parents.
+</p>
+</div>
+
+<div align="center">
+<div id="fig3"></div>
+     <p>This clearly indicates the Female individuals had the highest survival rates in all the classes and categories
+</p>
+</div>
+    <div class="conclusion">
+
+		<p> >The analysis seems that , A female with upper social-economic standing (first class) and Children,had the best chance of survival. Man in third class, had the lowest chance of survival. Women and children of all classes, were mostly having a higher survival rate than men in general. 
+		</p>
+        <p> > The survival rate of a individual travelling with family has higher rate of survival as compared to those travelling alone.</p>
+</div>
+
+
+	<script type="text/javascript">
+        
+    var svg1 = dimple.newSvg("#fig1", 600, 400);
+    d3.csv("data/Age_group.csv", function(data){
+        var chart = new dimple.chart(svg1, data);
+        x = chart.addCategoryAxis("x", "Age_group");
+        x.addOrderRule("Age_group");
+        y = chart.addMeasureAxis("y", "Survived");
+        chart.addSeries(null,dimple.plot.scatter);
+        chart.addSeries(null,dimple.plot.line);
+        svg1.append("text")
+         .attr("x", chart._xPixels() + chart._widthPixels() / 2)
+         .attr("y", chart._yPixels() - 20)
+         .style("text-anchor", "middle")
+         .style("font-weight", "bold")
+         .text("Survival Rate vs Age");
+        
+    chart.draw();
+    y.titleShape.text("Survival Rate");
+
+    }); 
+
+   
+
+    var svg2 = dimple.newSvg("#fig2",600, 400);
+        
+    d3.csv("data/Parch.csv", function (data) {
+      var myChart = new dimple.chart(svg2, data);
+      //myChart.setBounds(65, 50, 505, 310)
+      x=myChart.addCategoryAxis("x", ["Parch"]);
+      x.addOrderRule("Parch");
+      y=myChart.addMeasureAxis("y", "Survived");
+      myChart.addMeasureAxis("p", "Survived");
+      var bar = myChart.addSeries(null, dimple.plot.bar);
+        
+        svg2.append("text")
+         .attr("x", myChart._xPixels() + myChart._widthPixels() / 2)
+         .attr("y", myChart._yPixels() - 20)
+         .style("text-anchor", "middle")
+         .style("font-weight", "bold")
+         .text("Survival Rate by Number of parents and children of the passenger aboard");  
+      // x.title("My New Title");
+      // myChart.addLegend(170, 10, 410, 20, "right");
+         myChart.draw();
+         x.titleShape.text("Parents with children");
+         y.titleShape.text("Survival Rate");
+
+    });
+        
+    
+    var svg3 = dimple.newSvg("#fig3",600, 400);
+        
+   d3.csv("data/titanic_group_age.csv", function (data) {
+      var myChart = new dimple.chart(svg3, data);
+      myChart.setBounds(60, 45, 510, 315)
+      x=myChart.addCategoryAxis("x", ["group_age","Pclass","Sex"]);
+      y=myChart.addMeasureAxis("y", "Survived");
+      myChart.addSeries(["Pclass","Sex"], dimple.plot.bar);
+      myChart.barGap = 0.5;
+      myChart.addLegend(200, 10, 380, 20, "right");
+       myChart.assignColor("female","#ff85a2");
+       
+        svg3.append("text")
+         .attr("x", myChart._xPixels() + myChart._widthPixels() / 2 - 50)
+         .attr("y", myChart._yPixels() - 28)
+         .style("text-anchor", "middle")
+         .style("font-weight", "bold")
+         .text("Survival Rate vs Age_groups grouped by Pclass");  
+      myChart.draw();
+       y.titleShape.text("Survival Rate");
+       x.titleShape.text("Age_groups and Pclass");
+    });
+
+
+	</script>
+</body>
+</html>

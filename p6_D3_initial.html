@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Titanic Data Exploration</title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
+    <script src="PMSIbar/lib/d3.v4.3.0.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+
+
+    
+  </head>
+
+<body>
+    <div>
+<div id="fig1"></div>
+</div>
+
+<div>
+<div id="fig2"></div>
+</div>
+
+<div>
+<div id="fig3"></div>
+</div>
+
+	<script type="text/javascript">
+        
+    var svg1 = dimple.newSvg("#fig1", 600, 400);
+    d3.csv("data/Age_group.csv", function(data){
+        var chart = new dimple.chart(svg1, data);
+        x = chart.addCategoryAxis("x", "Age_group");
+        x.addOrderRule("Age_group");
+        chart.addMeasureAxis("y", "Survived");
+        chart.addSeries(null,dimple.plot.scatter);
+        chart.addSeries(null,dimple.plot.line);
+
+        
+    chart.draw();
+    }); 
+
+   
+   var svg2 = dimple.newSvg("#fig2",600, 400);
+        
+    d3.csv("data/titanic_all.csv", function (data) {
+      var myChart = new dimple.chart(svg2, data);
+      //myChart.setBounds(65, 50, 505, 310)
+      myChart.addCategoryAxis("x", ["Parch","Pclass"]);
+      myChart.addMeasureAxis("y", "Survived");
+      myChart.addMeasureAxis("p", "Survived");
+      var barz = myChart.addSeries("Category", dimple.plot.bar);
+      myChart.addLegend(170, 10, 410, 20, "right");
+      myChart.draw();
+    });
+    
+    var svg3 = dimple.newSvg("#fig3",600, 400);
+        
+   d3.csv("data/titanic_group_age.csv", function (data) {
+      var myChart = new dimple.chart(svg3, data);
+      myChart.setBounds(60, 45, 510, 315)
+      myChart.addCategoryAxis("x", ["group_age","Pclass","Sex"]);
+      myChart.addMeasureAxis("y", "Survived");
+      myChart.addSeries(["Pclass","Sex"], dimple.plot.bar);
+      myChart.barGap = 0.5;
+      myChart.addLegend(200, 10, 380, 20, "right");
+      myChart.draw();
+    });
+
+
+	</script>
+</body>
+</html>

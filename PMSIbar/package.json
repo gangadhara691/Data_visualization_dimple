@@ -1,0 +1,24 @@
+{
+    "name": "dimple",
+    "version": "2.3.0",
+    "private": false,
+    "license": "MIT",
+    "main": "dist/dimple.latest.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/PMSI-AlignAlytics/dimple.git"
+    },
+    "devDependencies": {
+        "requirejs": "2.3.2",
+        "express": "4.14.0",
+        "grunt": "1.0.1",
+        "grunt-jslint": "1.1.14",
+        "grunt-contrib-concat": "1.0.1",
+        "grunt-contrib-uglify": "2.0.0",
+        "grunt-contrib-connect": "1.0.2",
+        "grunt-contrib-copy": "1.0.0"
+    },
+    "buildDependencies": {
+        "d3": "4.3.0"
+    }
+}

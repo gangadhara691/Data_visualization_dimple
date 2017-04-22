@@ -1,0 +1,9 @@
+node_modules
+bower_components
+.komodotools
+.idea
+*.komodo*
+help
+image_creator
+tmp
+notes
