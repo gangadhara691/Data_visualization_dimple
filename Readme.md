@@ -8,7 +8,7 @@
 3.The third plot,reflects us "children and women first" ,as they are given preference over men in general.
 
 ### Design
-I Select the Titanic dataset since its for begginer and no data wrangling is required.
+I Selected the Titanic dataset since its for begginer and no data wrangling is required.
 #### Overview
 In 1912, the ship RMS Titanic struck an iceberg on its maiden voyage and sank, resulting in the deaths of most of its    passengers and crew. In this project, we will explore the RMS Titanic passenger manifest to determine whether someone survived or did not survive.Demographics and passenger information from 891 of the 2224 passengers and crew on board. 
 
